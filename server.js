@@ -29,6 +29,38 @@ app.post("/send-sms", (req, res) => {
     });
 
 });
+<script>
+document.getElementById("serviceForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let service = document.getElementById("service").value;
+    let desc = document.getElementById("desc").value;
+
+    // Create customer object
+    let customer = {
+        id: "SC" + Date.now(),   // unique ID
+        name: name,
+        mobile: mobile,
+        service: service,
+        desc: desc,
+        date: new Date().toLocaleDateString()
+    };
+
+    // Get old data
+    let data = JSON.parse(localStorage.getItem("customers")) || [];
+
+    // Add new
+    data.push(customer);
+
+    // Save
+    localStorage.setItem("customers", JSON.stringify(data));
+
+    document.getElementById("msg").innerHTML = "✅ Saved Successfully!";
+    document.getElementById("serviceForm").reset();
+});
+</script>
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
