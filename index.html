@@ -1,234 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sunny Computer CSC Centre</title>
+<div class="section" id="apply">
+    <h2>Apply for Service</h2>
+
+    <form id="serviceForm" style="max-width:500px; margin:auto;">
+        
+        <input type="text" id="name" placeholder="Full Name" required class="input"><br><br>
+
+        <input type="tel" id="mobile" placeholder="Mobile Number" required class="input"><br><br>
+
+        <select id="service" class="input" required>
+            <option value="">Select Service</option>
+            <option>PAN Card (New / Correction)</option>
+            <option>Voter ID (New / Correction)</option>
+            <option>Passport Application</option>
+            <option>Ayushman Bharat Card</option>
+            <option>E-Shram Card</option>
+            <option>Caste Certificate</option>
+            <option>Income Certificate</option>
+            <option>Udyam Registration (MSME)</option>
+            <option>Online Forms & Govt Schemes</option>
+            <option>Print / Scan / Lamination</option>
+            <option>E-Filing / TDS</option>
+        </select><br><br>
+
+        <textarea id="desc" placeholder="Description / Details" class="input"></textarea><br><br>
+
+        <button type="submit" class="btn">Submit Application</button>
+    </form>
+
+    <div id="msg" style="text-align:center; margin-top:20px;"></div>
+</div>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-}
-
-/* Header */
-header {
-    background: #0a3d62;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-/* Navigation */
-nav {
-    background: #145da0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: white;
-    padding: 12px 18px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background: #0a3d62;
-}
-
-/* Hero */
-.hero {
-    text-align: center;
-    padding: 40px;
-    background: linear-gradient(to right, #1e90ff, #00b894);
-    color: white;
-}
-
-/* Sections */
-.section {
-    padding: 30px;
-}
-
-.section h2 {
-    text-align: center;
-    color: #0a3d62;
-}
-
-/* Service Cards */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    color: #145da0;
-}
-
-/* Contact */
-.contact {
-    background: #0a3d62;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 15px;
-    background: #25d366;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.call-btn {
-    background: #ff4757;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #145da0;
-    color: white;
+.input {
+    width:100%;
+    padding:12px;
+    border-radius:6px;
+    border:1px solid #ccc;
 }
 </style>
-</head>
+<script>
+document.getElementById("serviceForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-<body>
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let service = document.getElementById("service").value;
+    let desc = document.getElementById("desc").value;
 
-<header>
-    <h1>Sunny Computer CSC Centre</h1>
-    <p>Government Authorized Common Service Centre - Digital India</p>
-</header>
+    let message = `New Customer:
+Name: ${name}
+Mobile: ${mobile}
+Service: ${service}
+Details: ${desc}`;
 
-<nav>
-    <a href="#services">Services</a>
-    <a href="#documents">Documents</a>
-    <a href="#business">Business</a>
-    <a href="#other">Other Services</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<div class="hero">
-    <h2>All Government Services at One Place</h2>
-    <p>Fast | Reliable | Trusted</p>
-</div>
-
-<!-- SERVICES SECTION -->
-<div class="section" id="services">
-    <h2>Government ID Services</h2>
-    <div class="services">
-
-        <div class="card">
-            <h3>PAN Card</h3>
-            <p>New PAN Card & Correction Services</p>
-        </div>
-
-        <div class="card">
-            <h3>Voter ID</h3>
-            <p>New Registration & Correction</p>
-        </div>
-
-        <div class="card">
-            <h3>Passport</h3>
-            <p>Application & Assistance</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- DOCUMENT SERVICES -->
-<div class="section" id="documents">
-    <h2>Certificate Services</h2>
-    <div class="services">
-
-        <div class="card">
-            <h3>Caste Certificate</h3>
-        </div>
-
-        <div class="card">
-            <h3>Income Certificate</h3>
-        </div>
-
-        <div class="card">
-            <h3>Ayushman Bharat Card</h3>
-        </div>
-
-        <div class="card">
-            <h3>E-Shram Card</h3>
-        </div>
-
-    </div>
-</div>
-
-<!-- BUSINESS -->
-<div class="section" id="business">
-    <h2>Business & Registration</h2>
-    <div class="services">
-
-        <div class="card">
-            <h3>Udyam Registration (MSME)</h3>
-        </div>
-
-        <div class="card">
-            <h3>Online Forms</h3>
-            <p>All Government Schemes</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- OTHER SERVICES -->
-<div class="section" id="other">
-    <h2>Other Services</h2>
-    <div class="services">
-
-        <div class="card">
-            <h3>Print / Scan / Photocopy</h3>
-        </div>
-
-        <div class="card">
-            <h3>Lamination</h3>
-        </div>
-
-        <div class="card">
-            <h3>E-Filing</h3>
-        </div>
-
-        <div class="card">
-            <h3>TDS Applications</h3>
-        </div>
-
-    </div>
-</div>
-
-<!-- CONTACT -->
-<div class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Sarisha, Silchar Road, Sribhumi, Assam - 788713</p>
-    <p>📞 Call: 9435091694</p>
-    <p>💬 WhatsApp: 8638103439</p>
-
-    <a href="tel:9435091694" class="btn call-btn">Call Now</a>
-    <a href="https://wa.me/918638103439" class="btn">WhatsApp</a>
-</div>
-
-<footer>
-    <p>© 2026 Sunny Computer CSC Centre | All Rights Reserved</p>
-</footer>
-
-</body>
-</html>
+    // ⚠️ This calls backend (you need Node.js server below)
+    fetch("http://localhost:3000/send-sms", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+    })
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("msg").innerHTML = "✅ Application Submitted Successfully!";
+        document.getElementById("serviceForm").reset();
+    })
+    .catch(err => {
+        document.getElementById("msg").innerHTML = "❌ Error sending request";
+    });
+});
+</script>
