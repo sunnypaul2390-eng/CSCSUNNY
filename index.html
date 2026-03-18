@@ -1,41 +1,223 @@
-<div class="section" id="apply">
-    <h2>Apply for Service</h2>
-
-    <form id="serviceForm" style="max-width:500px; margin:auto;">
-        
-        <input type="text" id="name" placeholder="Full Name" required class="input"><br><br>
-
-        <input type="tel" id="mobile" placeholder="Mobile Number" required class="input"><br><br>
-
-        <select id="service" class="input" required>
-            <option value="">Select Service</option>
-            <option>PAN Card (New / Correction)</option>
-            <option>Voter ID (New / Correction)</option>
-            <option>Passport Application</option>
-            <option>Ayushman Bharat Card</option>
-            <option>E-Shram Card</option>
-            <option>Caste Certificate</option>
-            <option>Income Certificate</option>
-            <option>Udyam Registration (MSME)</option>
-            <option>Online Forms & Govt Schemes</option>
-            <option>Print / Scan / Lamination</option>
-            <option>E-Filing / TDS</option>
-        </select><br><br>
-
-        <textarea id="desc" placeholder="Description / Details" class="input"></textarea><br><br>
-
-        <button type="submit" class="btn">Submit Application</button>
-    </form>
-
-    <div id="msg" style="text-align:center; margin-top:20px;"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny Computer CSC Centre</title>
 
 <style>
-.input {
-    width:100%;
-    padding:12px;
-    border-radius:6px;
-    border:1px solid #ccc;
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f7fb;
+}
+
+/* Header */
+header {
+    background:#0a3d62;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* Navbar */
+nav {
+    background:#145da0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+nav a {
+    color:white;
+    padding:12px 15px;
+    text-decoration:none;
+}
+nav a:hover {
+    background:#0a3d62;
+}
+
+/* Hero */
+.hero {
+    background:linear-gradient(to right,#1e90ff,#00b894);
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+/* Section */
+.section {
+    padding:30px;
+}
+.section h2 {
+    text-align:center;
+    color:#0a3d62;
+}
+
+/* Cards */
+.services {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+.contact {
+    background:#0a3d62;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Buttons */
+.btn {
+    display:inline-block;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:5px;
+    text-decoration:none;
+    color:white;
+}
+.call {background:#e74c3c;}
+.whatsapp {background:#25d366;}
+
+/* Footer */
+footer {
+    background:#145da0;
+    color:white;
+    text-align:center;
+    padding:10px;
 }
 </style>
-<script>
+</head>
+
+<body>
+
+<header>
+<h1>Sunny Computer CSC Centre</h1>
+<p>Government Authorized Common Service Centre - Digital India</p>
+</header>
+
+<nav>
+<a href="#id">ID Services</a>
+<a href="#cert">Certificates</a>
+<a href="#business">Business</a>
+<a href="#other">Other Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<h2>All Digital Government Services in One Place</h2>
+<p>Fast • Secure • Reliable</p>
+</div>
+
+<!-- ID SERVICES -->
+<div class="section" id="id">
+<h2>ID & Card Services</h2>
+<div class="services">
+
+<div class="card">
+<h3>PAN Card</h3>
+<p>New PAN / Correction</p>
+</div>
+
+<div class="card">
+<h3>Voter ID</h3>
+<p>New Registration / Correction</p>
+</div>
+
+<div class="card">
+<h3>Passport</h3>
+<p>Application Assistance</p>
+</div>
+
+<div class="card">
+<h3>Ayushman Bharat Card</h3>
+</div>
+
+<div class="card">
+<h3>E-Shram Card</h3>
+</div>
+
+</div>
+</div>
+
+<!-- CERTIFICATES -->
+<div class="section" id="cert">
+<h2>Certificate Services</h2>
+<div class="services">
+
+<div class="card">
+<h3>Caste Certificate</h3>
+</div>
+
+<div class="card">
+<h3>Income Certificate</h3>
+</div>
+
+</div>
+</div>
+
+<!-- BUSINESS -->
+<div class="section" id="business">
+<h2>Business & Registration</h2>
+<div class="services">
+
+<div class="card">
+<h3>Udyam Registration (MSME)</h3>
+</div>
+
+<div class="card">
+<h3>Online Forms & Govt Schemes</h3>
+</div>
+
+</div>
+</div>
+
+<!-- OTHER -->
+<div class="section" id="other">
+<h2>Other Services</h2>
+<div class="services">
+
+<div class="card">
+<h3>Print / Scan / Photocopy</h3>
+</div>
+
+<div class="card">
+<h3>Lamination</h3>
+</div>
+
+<div class="card">
+<h3>E-Filing</h3>
+</div>
+
+<div class="card">
+<h3>TDS Applications</h3>
+</div>
+
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+<h2>Contact Us</h2>
+
+<p>📍 Sarisha, Silchar Road, Sribhumi, Assam - 788713</p>
+<p>📞 Call: 9435091694</p>
+<p>💬 WhatsApp: 8638103439</p>
+
+<a href="tel:9435091694" class="btn call">Call Now</a>
+<a href="https://wa.me/918638103439" class="btn whatsapp">WhatsApp</a>
+</div>
+
+<footer>
+<p>© 2026 Sunny Computer CSC Centre | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
