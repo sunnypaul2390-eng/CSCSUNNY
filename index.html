@@ -39,35 +39,3 @@
 }
 </style>
 <script>
-document.getElementById("serviceForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let mobile = document.getElementById("mobile").value;
-    let service = document.getElementById("service").value;
-    let desc = document.getElementById("desc").value;
-
-    let message = `New Customer:
-Name: ${name}
-Mobile: ${mobile}
-Service: ${service}
-Details: ${desc}`;
-
-    // ⚠️ This calls backend (you need Node.js server below)
-    fetch("http://localhost:3000/send-sms", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message })
-    })
-    .then(res => res.text())
-    .then(data => {
-        document.getElementById("msg").innerHTML = "✅ Application Submitted Successfully!";
-        document.getElementById("serviceForm").reset();
-    })
-    .catch(err => {
-        document.getElementById("msg").innerHTML = "❌ Error sending request";
-    });
-});
-</script>
